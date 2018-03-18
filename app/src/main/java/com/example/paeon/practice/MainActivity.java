@@ -3,6 +3,7 @@ package com.example.paeon.practice;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.nfc.Tag;
 import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
@@ -59,14 +60,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void onResume() {
+
         super.onResume();  // Always call the superclass method first
         Log.d("onResume",  "ondevice val :  "+ IsOndeviceMode());
         // Get the Camera instance as the activity achieves full user focus
+
+
+        //fist two 'FF' was not used..
         if (IsOndeviceMode() == true) {
-            
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF0000));
         }
         else{
-
+            getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF3F51B5));
         }
     }
 
