@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">practice</string>
+    <string name="actionbar_name">practice actionbar</string>
 </resources>
