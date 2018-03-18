@@ -2,7 +2,9 @@ package com.example.paeon.practice;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
    // String TAG = getLocalClassName();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,10 +26,11 @@ public class MainActivity extends AppCompatActivity {
         ab.setTitle(R.string.actionbar_name);
 
 
-
+        IsOndeviceMode();
     }
 
-    @Override public boolean onCreateOptionsMenu(Menu menu)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.action_menu, menu) ;
         return true ;
@@ -44,6 +49,27 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    private boolean IsOndeviceMode(){
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        boolean isOnDevice = pref.getBoolean("ondevice_mode", false);
+        return isOnDevice;
+    }
+
+
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+        Log.d("onResume",  "ondevice val :  "+ IsOndeviceMode());
+        // Get the Camera instance as the activity achieves full user focus
+        if (IsOndeviceMode() == true) {
+            
+        }
+        else{
+
+        }
+    }
+
 
 
 }
