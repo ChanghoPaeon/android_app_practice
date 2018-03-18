@@ -69,12 +69,11 @@ public class MainActivity extends AppCompatActivity {
         //fist two 'FF' was not used..
         if (IsOndeviceMode() == true) {
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFFFF0000));
+            getSupportActionBar().setTitle(getResources().getString(R.string.actionbar_name) + " with ondevice");
         }
         else{
             getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xFF3F51B5));
+            getSupportActionBar().setTitle(getResources().getString(R.string.actionbar_name) + " with server");
         }
     }
-
-
-
 }
