@@ -2,4 +2,5 @@
     <string name="app_name">practice</string>
     <string name="actionbar_name">practice actionbar</string>
     <string name="settings">settings</string>
+    <string name="enable_ondevice">Enable onDevice Mode</string>
 </resources>

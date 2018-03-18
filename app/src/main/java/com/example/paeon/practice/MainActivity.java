@@ -1,6 +1,7 @@
 package com.example.paeon.practice;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.nfc.Tag;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -35,11 +36,14 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case R.id.action_settings :
                 Log.d("onOptionsItemSelected", "setting button clicked");
+                Intent intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
                 return true;
 
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
+
+
 }
